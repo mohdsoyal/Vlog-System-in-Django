@@ -1,0 +1,27 @@
+{% include 'partial/nav.html' %}
+<style>
+    #form{
+        border: 2px solid gray;
+        height: 500px;
+        width: 400px;
+        text-align: center;
+        padding-top: 20px;
+        margin-inline: auto;
+        background-color: aqua;
+    }
+    
+</style>
+<form id="form" action="" method="post" enctype="multipart/form-data">
+    <h2><u>SIGNUP FORM</u></h2>
+    {% csrf_token %}
+    
+    {% for i in fm %}
+
+    {{i.label_tag}}  {{i}} <br><br>
+    {% endfor %}
+
+    <input type="submit" value="Submit">
+  
+</form>
+
+{% include 'partial/foot.html' %}

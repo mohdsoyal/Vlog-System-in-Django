@@ -1,0 +1,28 @@
+{% load static %}
+
+{% include 'partial/nav.html' %}
+<style>
+    #single{
+        text-align: center;
+        justify-content: center;
+        width: 100%;
+    }
+    
+</style>
+
+<div  id="single"  class="row row-cols-1 article row-cols-md-2 g-4">
+    <div class="col">
+        <div class="card">
+            <img src="{{ data.image }}"  class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title"><a href="">{{ data.title }}</a></h5>
+                <p class="card-text">{{ data.des }}</p>
+                <p class="card-date">Created {{data.date}}</p>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+{% include 'partial/foot.html' %}

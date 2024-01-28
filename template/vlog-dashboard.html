@@ -1,0 +1,43 @@
+<!-- <form action="" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ fm.as_p }}
+    <input type="submit" value="save">
+
+</form> -->
+{% load static %}
+
+{% include 'partial/nav.html' %}
+
+
+<table>
+    <thead>
+        <tr>
+            <th scope="col">Image</th>
+            <th scope="col">Title</th>
+            <th scope="col">Description</th>
+            <th scope="col">Date</th>
+            <th scope="col">Edit</th>
+            <th scope="col">Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for i in data %}
+        <tr>
+            
+            <td><img src="{{i.image}}" width="80px" alt=""></td>
+            <td>{{i.title}}</td>
+            <td>{{i.des}}</td>
+            <td>{{i.date}}</td>
+            <th scope="col"><button class="btn btn-success"><a href="{% url 'vlog-update' i.id %}">Edit</a></button></th>
+            <th scope="col"><button class="btn btn-danger"><a href="{% url 'delete_vlog' i.id %}">Delete</a></button></th>
+            
+            
+        </tr>
+        {% endfor %}
+        
+    </tbody>
+</table>
+
+{% include 'partial/foot.html' %}
+
+

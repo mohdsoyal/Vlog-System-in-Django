@@ -1,0 +1,47 @@
+{% load static %}
+
+{% include 'partial/nav.html' %}
+
+<style>
+
+    #form{
+        border: 2px solid red;
+        width: 300px;
+        height: 300px;
+        text-align: center;
+        padding-top: 10px;
+        margin-inline: auto;
+        background-color:aqua
+        
+    }
+    #button{
+    padding:10px 25px ;
+    width:40%;
+    color:#fff;
+    border:none;
+    border-radius: 25px;
+    background:linear-gradient(to right,#f5914e,#e85826) ;
+    }
+    #button{
+        margin-top: 30px;
+    }
+</style>
+
+
+<form id="form" action="" method="post" enctype="multipart/form-data">
+    <h2><u>LOGIN FORM</u></h2>
+    
+    {% csrf_token %}
+    <label for="">Username :-</label>
+    <input type="text" name="username" placeholder="Enter The Username"><br><br>
+    <label for="">Password :-</label>
+    <input type="password" name="password" placeholder="Enter The Password"><br><br>
+    <input id="button" type="submit" value="Login">
+
+</form>
+
+
+
+
+
+{% include 'partial/foot.html' %}

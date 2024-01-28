@@ -1,0 +1,22 @@
+{% load static %}
+
+{% include 'partial/nav.html' %}
+
+
+<div class="row row-cols-1 article row-cols-md-3 g-4">
+  {% for i in data %} 
+  <div class="col">
+    <div class="card">
+      <img src="{{ i.image }}" background-position="center" background-size="cover"  height="350px" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title"><a href="{% url 'single_page' id=i.id %}">{{ i.title }}</a></h5>
+        <p class="card-text">{{ i.des|slice:"0:300" }}</p>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+
+</div>
+
+{% include 'partial/foot.html' %}
+

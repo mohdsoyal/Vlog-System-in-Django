@@ -1,0 +1,33 @@
+{% include 'partial/nav.html' %}
+
+
+<div class="container mt-5">
+    <div class="profile">
+        <div class="profile-nav">
+            <img src="{{request.user.profile.image.url}}" height="170px" style="border-radius: 100PX;">
+            <h2>{{user.first_name}}</h2>
+            <ul>
+                <li><a href=""><i class="fa-regular fa-user"></i> Profile</a></li>
+                <li><a href=""><i class="fa-solid fa-clock-rotate-left"></i> Order History</a></li>
+            </ul>
+        </div>
+        <div class="profile-details">
+            <p>Basic Info</p>
+            <table>
+                <tr>
+                    <td>Username</td>
+                    <td>{{user.username}}</td>
+                </tr>
+                <tr>
+                    <td>YOUR EMAIL</td>
+                    <td>{{user.email}}</td>
+                </tr>
+
+                
+            </table>
+        </div>
+    </div>
+</div><br><br><br>
+{% include 'partial/foot.html' %}
+
+

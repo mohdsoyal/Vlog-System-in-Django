@@ -1,0 +1,27 @@
+{% load static %}
+
+{% include 'partial/nav.html' %}
+
+{% for i in data %}
+
+<style>
+    #single{
+        justify-content: center;
+    }
+</style>
+<div  id="single"  class="row row-cols-1 article row-cols-md-2 g-4">
+    <div class="col">
+        <div class="card">
+            <img src="{{ i.image }}"  class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title"><a href="">{{ i.title }}</a></h5>
+                <p class="card-text">{{ i.des }}</p>
+                <p class="card-date">Created {{i.date}}</p>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+{% endfor %}
+{% include 'partial/foot.html' %}
