@@ -18,7 +18,7 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-   path('',views.index,name='index'),
+   path('index',views.index,name='index'),
    path('vlog-dashboard',views.vlog_dashboard,name='vlog-dashboard'),
    path('vlog-create',views.vlog_create,name='vlog-create'),
    path('vlog-update/<id>',views.vlog_update,name='vlog-update'),
